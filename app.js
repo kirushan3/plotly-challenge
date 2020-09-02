@@ -1,11 +1,11 @@
 function MetaData(sample) { 
     d3.json("samples.json").then((data)=>{
     var metadata = data.metadata;
-    // Filter the data for ech sample
+    // Filter the data for each sample
     var ArrayResult = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = ArrayResult[0];
     
-    // Let use d3 to place in the index
+    // use d3 to place in the index
     var metaDataPanel = d3.select("#sample-metadata");
 
     // use html to clear any input if present
@@ -75,7 +75,7 @@ function init() {
         MetaData(oneSample);
     });
 }
-// functo to generate change
+// function to generate change
 function optionChanged(newSample){
     buildCharts(newSample);
     MetaData(newSample);
