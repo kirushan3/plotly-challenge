@@ -50,6 +50,25 @@ function buildCharts(sample) {
         }
         Plotly.newPlot("bar", barChart, barLayout);
 
+        var bubbleChart = [
+            {
+                x: otu_ids,
+                y: sample_values,
+                mode: "markers",
+                marker: {
+                    size: sample_values,
+                    color: otu_ids
+                },
+                text: otu_labels
+            }
+        ];
+        var bubbleLayout = {
+            title: "Biodiversity"
+        }
+
+
+        Plotly.newPlot("bubble", bubbleChart, bubbleLayout);
+
     });
 }
 
